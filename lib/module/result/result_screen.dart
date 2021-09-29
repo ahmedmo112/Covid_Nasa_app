@@ -78,7 +78,7 @@ class _ResultScreenState extends State<ResultScreen> {
         elevation: 10,
         child: Container(
           padding: EdgeInsets.all(10),
-          height: 100,
+         // height: 110,
           child: Row(children: [
             Image.asset('assets/images/hospital.png', height: 70),
             SizedBox(
