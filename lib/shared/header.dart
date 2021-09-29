@@ -73,7 +73,7 @@ class _MyHeaderState extends State<MyHeader> {
                   ),
                   Positioned(
                     top: 20 - widget.offset! / 2,
-                    left: len == Locale('ar', 'EG')? 20: 140,
+                    left: len == Locale('ar', 'EG')? 10: 140,
                     child: Container(
                       child: Text(
                         "${widget.textTop} \n${widget.textBottom}",

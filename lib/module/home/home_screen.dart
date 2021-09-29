@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:covid/localization/localization_const.dart';
 import 'package:covid/shared/constant.dart';
 import 'package:covid/shared/counter.dart';
 import 'package:covid/shared/header.dart';
@@ -35,6 +36,8 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  String contry = "Egypt";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,8 +54,8 @@ class _HomeScreenState extends State<HomeScreen> {
           children: <Widget>[
             MyHeader(
               image: "assets/icons/Drcorona.svg",
-              textTop: "All you need",
-              textBottom: "is stay at home.",
+              textTop: getTranslated(context, "aynT").toString(),
+              textBottom: getTranslated(context, "aynB").toString(),
               offset: offset,
             ),
             Container(
@@ -76,19 +79,23 @@ class _HomeScreenState extends State<HomeScreen> {
                       isExpanded: true,
                       underline: SizedBox(),
                       icon: SvgPicture.asset("assets/icons/dropdown.svg"),
-                      value: "Egypt",
+                      value:getTranslated(context, "con1").toString() ,
                       items: [
-                        'Egypt',
-                        'Bangladesh',
-                        'United States',
-                        'Japan'
+                        getTranslated(context, "con1").toString(),
+                        getTranslated(context, "con2").toString(),
+                        getTranslated(context, "con3").toString(),
+                        getTranslated(context, "con4").toString()
                       ].map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
                           child: Text(value),
                         );
                       }).toList(),
-                      onChanged: (value) {},
+                      onChanged: ( value) {
+                        setState(() {
+                        //  contry =value.toString();
+                        });
+                      },
                     ),
                   ),
                 ],
@@ -105,11 +112,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         text: TextSpan(
                           children: [
                             TextSpan(
-                              text: "Case Update\n",
+                              text: "${getTranslated(context, "caseU")}\n",
                               style: kTitleTextstyle,
                             ),
                             TextSpan(
-                              text: "Newest update Yesterday",
+                              text: getTranslated(context, "date"),
                               style: TextStyle(
                                 color: kTextLightColor,
                               ),
@@ -119,7 +126,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Spacer(),
                       Text(
-                        "See details",
+                        getTranslated(context, "detalis"),
                         style: TextStyle(
                           color: kPrimaryColor,
                           fontWeight: FontWeight.w600,
@@ -148,17 +155,17 @@ class _HomeScreenState extends State<HomeScreen> {
                         Counter(
                           color: kInfectedColor,
                           number: 1046,
-                          title: "Infected",
+                          title: getTranslated(context, "cas1"),
                         ),
                         Counter(
                           color: kDeathColor,
                           number: 87,
-                          title: "Deaths",
+                          title: getTranslated(context, "cas2"),
                         ),
                         Counter(
                           color: kRecovercolor,
-                          number: 46,
-                          title: "Recovered",
+                          number: 64,
+                          title: getTranslated(context, "cas3"),
                         ),
                       ],
                     ),
@@ -169,11 +176,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     // ignore: prefer_const_literals_to_create_immutables
                     children: <Widget>[
                       Text(
-                        "Spread of Virus",
+                        getTranslated(context, "Spreadofv"),
                         style: kTitleTextstyle,
                       ),
                       Text(
-                        "See details",
+                        getTranslated(context, "detalis"),
                         style: TextStyle(
                           color: kPrimaryColor,
                           fontWeight: FontWeight.w600,

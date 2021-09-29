@@ -1,4 +1,5 @@
 {
+    
     "infoscreenheadertop":"Welcome,",
     "infoscreenheaderbottom":"Be Safe with us.",
     "c1":"Did you think you have Covid-19?",
@@ -11,5 +12,49 @@
     "wearMask":"Wear face mask",
     "wearMaskD":"Since the start of the coronavirus outbreak some places have fully embraced wearing facemasks",
     "washHands":"Wash your hands",
-    "washHandsD":"Since the start of the coronavirus outbreak you need to wash your hand"
+    "washHandsD":"Since the start of the coronavirus outbreak you need to wash your hand",
+    "ws1":"What are you suffering from?",
+    "a": [
+    "Fever",
+    "Dry cough",
+    "Tiredness",
+    "Lose of taste or smell",
+    "Difficulty breathing or shortness of breath"
+    ],
+    "next":"Next",
+    "ws2":"What is your temperature?",
+    "rb":"Get the result",
+    "result":"Results",
+    "rs":"The result is:",
+    "r1":"Not really infected",
+    "r2":"Might be infected",
+    "r3":"There is a high chance that you'll be infecteed",
+    "mustDo":"What you must do?",
+    "m1":"Visit the nearest hospital",
+    "m2":"Take precautionary measures",
+    "hospitalN":"Hospital Name",
+    "loc":"Loction",
+    "mea1":"Wear the mask",
+    "mea2":"Wash your hand",
+    "mea3":"Use sanitizer",
+    "mea4":"Stay Home",
+    "reminder":"Reminder",
+    "aynT":"All you need",
+    "aynB":"is stay at home",
+    "con1":"Egypt",
+    "con2":"Soudi Arabia",
+    "con3":"Japan",
+    "con4":"United States",
+    "caseU":"Case Update",
+    "detalis":"See details",
+    "date":"Newest update Yesterday",
+    "casN1":"1046",
+    "casN2":"87",
+    "casN3":"64",
+    "cas1":"Infected",
+    "cas2":"Deaths",
+    "cas3":"Recovered",
+    "Spreadofv":"Spread of Virus"
+
+    
 }

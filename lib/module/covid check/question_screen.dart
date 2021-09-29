@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:covid/localization/localization_const.dart';
 import 'package:covid/module/covid%20check/temp_screen.dart';
 import 'package:covid/shared/componants/components.dart';
 import 'package:covid/shared/constant.dart';
@@ -46,7 +47,7 @@ Future ans()async{
    
      'Dry cough',
     
-    'Tiredness',
+    'Tiredness', 
      
      'Lose of taste or smell',
      
@@ -54,6 +55,15 @@ Future ans()async{
 
     
   ];
+
+  List<String> qar=[
+    "ارتفاع درجه الحرارة",
+    "سعال",
+    "الارهاق و التعب",
+    "فقدان الشم و التذوق",
+    "صعوبة او ضيق في التنفس",
+  ];
+
   List<bool> c =[
     false,
     false,
@@ -82,6 +92,10 @@ Future ans()async{
     });
   }
 
+  //  cList(context){
+  //    = getTranslated(context, "a");
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,18 +113,20 @@ Future ans()async{
           children: <Widget>[
             // ignore: prefer_const_constructors
             MyHeader2(
-              textTop: "What are you suffering from?",
+              textTop: getTranslated(context, "ws1"),
             ),
             ListView.separated(
               padding: EdgeInsets.zero,
               physics:const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
-              itemCount: q.length,
+              itemCount: 5,
               separatorBuilder: (BuildContext context, int index) {
                 return SizedBox();
               },
               itemBuilder: (BuildContext context, int index) {
-                return buildQuestion(question: q[index],isChosen: c[index],index: index);
+                return buildQuestion(
+                  question: len == Locale('ar', 'EG')? qar[index]: q[index],
+                  isChosen: c[index],index: index);
               },
             ),
             SizedBox(height: 30,),
@@ -133,7 +149,7 @@ Future ans()async{
                    child: Row(
                      mainAxisAlignment:MainAxisAlignment.center,
                      children: [
-                       Text("NEXT".toUpperCase(),style: TextStyle(fontWeight: FontWeight.bold),),
+                       Text(getTranslated(context, "next").toString().toUpperCase(),style: TextStyle(fontWeight: FontWeight.bold),),
                        Icon(Icons.arrow_forward_ios,size: 18,)
                      ],
                    ),

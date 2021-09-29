@@ -1,3 +1,4 @@
+import 'package:covid/localization/localization_const.dart';
 import 'package:covid/module/result/result_screen.dart';
 import 'package:covid/shared/componants/components.dart';
 import 'package:covid/shared/constant.dart';
@@ -54,7 +55,7 @@ class _TempScreenState extends State<TempScreen> {
                 children: <Widget>[
                   // ignore: prefer_const_constructors
                   MyHeader2(
-                    textTop: "What is your temperature?",
+                    textTop: getTranslated(context, "ws2"),
                   ),
                   SizedBox(
                     height: 30,
@@ -117,7 +118,7 @@ class _TempScreenState extends State<TempScreen> {
                    child: Row(
                      mainAxisAlignment:MainAxisAlignment.center,
                      children: [
-                       Text("Get the result".toUpperCase(),style: TextStyle(fontWeight: FontWeight.bold),),
+                       Text(getTranslated(context,"rb").toString().toUpperCase(),style: TextStyle(fontWeight: FontWeight.bold),),
                        Icon(Icons.arrow_forward_ios,size: 18,)
                      ],
                    ),

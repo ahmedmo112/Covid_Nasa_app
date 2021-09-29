@@ -33,6 +33,10 @@ Locale locale(String languageCode) {
   }
 }
 
-String? getTranslated(BuildContext context, String key) {
+ getTranslated(BuildContext context, String key) {
+  return DemoLocalization.of(context)!.translate(key);
+}
+
+ getTranslatedList(BuildContext context, String key) {
   return DemoLocalization.of(context)!.translate(key);
 }

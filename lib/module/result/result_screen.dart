@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:covid/localization/localization_const.dart';
 import 'package:covid/module/info/info_screen.dart';
 import 'package:covid/shared/componants/components.dart';
 import 'package:covid/shared/constant.dart';
@@ -47,15 +48,16 @@ class _ResultScreenState extends State<ResultScreen> {
   String? whatIdo;
   void _fun() {
     if (0 <= y && y <= 1 && tmp >= 37) {
-      txt = txtW('Not really infected', Colors.green);
-      whatIdo = ' Take precautionary measures';
+      txt = txtW(len == Locale('ar', 'EG')?"لست مصاب تماما":'Not really infected', Colors.green);
+      whatIdo = len == Locale('ar', 'EG')?"اتخاذ الاجراءات الاحترازيه":' Take precautionary measures';
     } else if (y >= 2 && y <= 3 && tmp >= 37) {
-      txt = txtW('Might be infected', Colors.amber);
-      whatIdo = ' Visit the nearest hospital';
+      txt = txtW(len == Locale('ar', 'EG')?"احتماليه اصابه":'Might be infected', Colors.amber);
+      whatIdo = len == Locale('ar', 'EG')?"زيارة اقرب مستشفي":' Visit the nearest hospital';
       isFacted =true;
     } else if (y >= 4 && y <= 5 && tmp >= 37) {
-      txt = txtW('There is a high chance that you\'ll be infected', Colors.red);
-      whatIdo = ' Visit the nearest hospital';
+      txt = txtW(len == Locale('ar', 'EG')?"احتماليه كبيره ان تكون مصاب":'There is a high chance that you\'ll be infected', Colors.red);
+      whatIdo = len == Locale('ar', 'EG')?"زيارة اقرب مستشفي":' Visit the nearest hospital';
+      
       isFacted =true;
 
     }
@@ -86,13 +88,13 @@ class _ResultScreenState extends State<ResultScreen> {
               child: Container(
                 child: Column(
                   children: [
-                    Text('Hospital Name', style: kTitleTextstyle),
+                    Text(getTranslated(context, "hospitalN"), style: kTitleTextstyle),
                     SizedBox(
                       height: 15,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
-                      child: defaultButton(function: () {}, text: 'Location'),
+                      child: defaultButton(function: () {}, text: getTranslated(context, "loc")),
                     )
                   ],
                 ),
@@ -121,7 +123,7 @@ class _ResultScreenState extends State<ResultScreen> {
                 // ignore: prefer_const_constructors
                 MyHeader(
               image: "assets/icons/coronadr.svg",
-              textTop: "Results",
+              textTop: getTranslated(context, "result"),
               textBottom: '',
               offset: offset,
             ),
@@ -130,10 +132,10 @@ class _ResultScreenState extends State<ResultScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('The result is:', style: kTitleTextstyle),
+                      Text(getTranslated(context, "rs"), style: kTitleTextstyle),
                       Center(child: txt),
                       SizedBox(height: 20),
-                      Text('What you must do?', style: kTitleTextstyle),
+                      Text(getTranslated(context, "mustDo"), style: kTitleTextstyle),
                       Text(whatIdo.toString(),
                           style: TextStyle(
                               fontSize: 17, fontWeight: FontWeight.w600)),
@@ -149,35 +151,33 @@ class _ResultScreenState extends State<ResultScreen> {
                       
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 40),
-                        child: staySafe(),
+                        child: staySafe(context),
                       ),
 
                       SizedBox(height: 20),
 
-                      Text('Reminder', style: kTitleTextstyle),
+                      Text(getTranslated(context, "reminder"), style: kTitleTextstyle),
 
                       RemindCard(
-                        title: "If you're infected reminder",
+                        title: getTranslated(context, "rem1"),
                         image: "assets/images/covid-test.png",
                       ),
                       RemindCard(
                         image: "assets/images/mask.png",
-                        title: "Stay Safe reminder",
+                        title: getTranslated(context, "rem2"),
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      const PreventCard(
-                        text:
-                            "Since the start of the coronavirus outbreak some places have fully embraced wearing facemasks",
+                       PreventCard(
+                        text: getTranslated(context, "wearMask"),
                         image: "assets/images/wear_mask.png",
-                        title: "Wear face mask",
+                        title: getTranslated(context, "wearMaskD"),
                       ),
-                      const PreventCard(
-                        text:
-                            "Since the start of the coronavirus outbreak some places have fully embraced wearing facemasks",
+                       PreventCard(
+                        text:getTranslated(context, "washHands"),
                         image: "assets/images/wash_hands.png",
-                        title: "Wash your hands",
+                        title: getTranslated(context, "washHandsD"),
                       ),
                     ],
                   ),
@@ -186,7 +186,7 @@ class _ResultScreenState extends State<ResultScreen> {
     );
   }
 
-  Widget staySafe() => GridView.count(
+  Widget staySafe(context) => GridView.count(
         crossAxisSpacing: 10.0,
         mainAxisSpacing: 10.0,
         crossAxisCount: 2,
@@ -196,13 +196,13 @@ class _ResultScreenState extends State<ResultScreen> {
         physics: NeverScrollableScrollPhysics(),
         children: <Widget>[
           gridItem('https://cdn-icons-png.flaticon.com/512/2750/2750657.png',
-              'Wear the mask'),
+              getTranslated(context, "mea1")),
               gridItem('https://cdn-icons-png.flaticon.com/512/2750/2750670.png',
-              'Wash your hand'),
+              getTranslated(context, "mea2")),
               gridItem('https://cdn-icons-png.flaticon.com/512/2750/2750786.png',
-              'Use sanitizer'),
+              getTranslated(context, "mea3")),
               gridItem('https://cdn-icons-png.flaticon.com/512/2750/2750806.png',
-              'Stay Home'),
+              getTranslated(context, "mea4")),
               
         ],
       );
