@@ -79,7 +79,8 @@ class _MyHeaderState extends State<MyHeader> {
                         "${widget.textTop} \n${widget.textBottom}",
                         style: kHeadingTextStyle.copyWith(
                           color: Colors.white,
-                          fontSize: 18
+                          fontSize: 18.0
+
                         ),
                       ),
                     ),
