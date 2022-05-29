@@ -1,10 +1,10 @@
 # Stay Safe
 
 Stay Safe Application built it for NASA Sapce Apps competition
-support Two languages Arabic and English with on boarding screen for first time use 
-can detect if you have covid-19 or not by asking you some quitions and your temprature
-and by analisy the inputs display what you must do 
-also provide covide updates and give you some information about covid-19
+* support Two languages Arabic and English with on boarding screen for first time use 
+* can detect if you have covid-19 or not by asking you some quitions and your temprature
+* and by analisy the inputs display what you must do 
+* also provide covide updates and give you some information about covid-19
 
 
 ## Screenshots
